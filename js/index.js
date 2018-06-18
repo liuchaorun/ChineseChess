@@ -998,7 +998,7 @@ class game {
                         this.isSelect = false;
                         if (map[i][j] === 1) {
                             alert('你赢了！');
-                            location.reload(true);
+                            location.reload();
                         }
                         map[i][j] = map[this.sP.i][this.sP.j];
                         map[this.sP.i][this.sP.j] = 0;
@@ -1011,7 +1011,7 @@ class game {
                             let action = m.ai.init();
                             if (action === false) {
                                 alert('你赢了！');
-                                location.reload(true);
+                                location.reload();
                             }
                             else {
                                 console.log(action);
@@ -1021,7 +1021,7 @@ class game {
                                 m.gameMap.print();
                                 if (map[action[2]][action[3]] === 17) {
                                     alert('你输了！');
-                                    location.reload(true);
+                                    location.reload();
                                 }
                                 document.getElementById('msg').innerText = `AI计算完成！耗时${new Date() - m.startTime - 100}ms`
                             }
